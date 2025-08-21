@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Burtons Property Spotter</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <header>
+    <h1>Burtons Property Ltd - Spotter Submission</h1>
+  </header>
+  <main>
+    <form id="spotterForm">
+      <label>First Name <input type="text" name="firstName" required /></label>
+      <label>Last Name <input type="text" name="lastName" required /></label>
+      <label>Email <input type="email" name="email" required /></label>
+      <label>Phone <input type="tel" name="phone" /></label>
+      <label>Property Address <textarea name="propertyAddress" required></textarea></label>
+      <label>Message <textarea name="message"></textarea></label>
+      <label>Upload Property Image <input type="file" name="imageFile" accept="image/*" /></label>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="status"></p>
+  </main>
+  <script src="idb.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

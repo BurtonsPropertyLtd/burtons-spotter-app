@@ -1,0 +1,25 @@
+body {
+  background: #F1EFE9;
+  color: #4B575C;
+  font-family: "Wix Madefor Text", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header h1 {
+  font-family: "Syne", sans-serif;
+  font-weight: bold;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+button {
+  background: #4B575C;
+  color: #F1EFE9;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: "Syne", sans-serif;
+}

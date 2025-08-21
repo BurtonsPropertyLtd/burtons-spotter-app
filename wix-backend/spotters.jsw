@@ -1,0 +1,32 @@
+import wixData from 'wix-data';
+import wixMedia from 'wix-media-backend';
+
+/**
+ * Handles submissions from Spotters App
+ */
+export async function spottersSubmit(submission) {
+    try {
+        const now = new Date();
+        let imageUrl = null;
+        if (submission.imageFile) {
+            const uploaded = await wixMedia.save(submission.imageFile, {
+                mediaOptions: { mediaType: "image" }
+            });
+            imageUrl = uploaded.fileUrl;
+        }
+        const record = {
+            submissionTime: now,
+            firstName: submission.firstName,
+            lastName: submission.lastName,
+            email: submission.email,
+            phone: submission.phone || "",
+            propertyAddress: submission.propertyAddress,
+            message: submission.message || "",
+            imageUrl: imageUrl || ""
+        };
+        return await wixData.insert("SpotterSubmissions", record);
+    } catch (err) {
+        console.error("Spotter submission error:", err);
+        return { status: "error", message: err.message };
+    }
+}
