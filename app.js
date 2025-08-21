@@ -9,7 +9,7 @@ document.getElementById('spotterForm').addEventListener('submit', async (e) => {
 
   try {
     // Placeholder: Replace with real Wix backend endpoint or webhook
-    const response = await fetch("https://your-webhook-or-backend-url", {
+    const response = await fetch("https://burtonsproperty.co.uk/_functions/spottersSubmit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(submission)
